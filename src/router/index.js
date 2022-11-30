@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
-const Layout = () => import('../views/Layout.vue')
+const LayOut = () => import('../views/Layout.vue')
 
 const routes = [
   {
     path: '/',
     name: 'Layout',
-    component: Layout
+    component: LayOut
   }
 ]
 const router = createRouter({

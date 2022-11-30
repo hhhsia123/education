@@ -1,17 +1,12 @@
 <template>
-    <div>123</div>
+    <el-button type="primary">Primary</el-button>
+
 </template>
 <script>
 export default {
-    name: 'LayOut',
-    components: {
-
-    },
+    name: 'layOut',
+    components: {},
     setup() {
-
     }
 }
 </script>
-<style lang="less" scoped>
-
-</style>
