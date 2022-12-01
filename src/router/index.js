@@ -1,11 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router'
 const LayOut = () => import('../views/Layout.vue')
+const registerLogin = () => import('../components/login/login.vue')
 
 const routes = [
   {
     path: '/',
     name: 'Layout',
-    component: LayOut
+    component: LayOut,
+    children: [
+      { path: '/user/login', component: registerLogin }
+    ]
   }
 ]
 const router = createRouter({
