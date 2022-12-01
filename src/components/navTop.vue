@@ -1,15 +1,15 @@
 <template>
     <nav class="contain">
         <!-- 头部电话 -->
+        <ul class="topPhone">
+            <li>中国电话:400-885-8793</li>
+            <li>美国电话: +1(315 544-5327)</li>
+            <li> 微信号:cheersu123</li>
+        </ul>
         <nav class="main">
-            <ul class="topPhone">
-                <li>中国电话:400-885-8793</li>
-                <li>美国电话: +1(315 544-5327)</li>
-                <li> 微信号:cheersu123</li>
-            </ul>
             <div class="topNav">
                 <!-- icon -->
-                <img class="pic" src="../assets/style/images/logo.png" alt="">
+                <RouterLink :to="'/'"> <img class="pic" src="../assets/style/images/logo.png" alt=""></RouterLink>
                 <!-- 导航栏 -->
                 <div class="member-order">
                     <XtxTabs v-model="activeName" @tab-click="tabClick" :mouseIndex="mouseIndex"
@@ -50,10 +50,10 @@
                 <!-- 点击登录跳转到登录页面 -->
                 <RouterLink :to="'/user/login'"> <el-button type="success" round>登录</el-button></RouterLink>
             </div>
-
         </nav>
 
     </nav>
+
 </template>
 <script>
 import { onClickOutside } from '@vueuse/core'
@@ -99,20 +99,18 @@ export default {
 </script>
 <style lang="less">
 .contain {
-    height: 40px;
-    background-color: #F5F5F5;
-    line-height: 40px;
-    position: relative;
+    .topPhone {
+        background-color: #F5F5F5;
+        display: flex;
+        justify-content: space-evenly;
+        height: 40px;
+        line-height: 40px;
+    }
 
     .main {
         width: 1240px;
         margin: auto;
-
-        // visibility:hidden
-        .topPhone {
-            display: flex;
-            justify-content: space-evenly;
-        }
+        height: 58px;
 
         .topNav {
             display: flex;
@@ -140,6 +138,7 @@ export default {
                     float: left;
                     position: relative;
                     top: 0 !important;
+                    z-index: 9999;
 
                     ul {
                         transition: all 0.3s;
@@ -180,6 +179,7 @@ export default {
 
             .dropDown {
                 position: relative;
+                z-index: 9999;
 
                 .down {
                     float: left;
@@ -207,7 +207,7 @@ export default {
             }
 
         }
-
     }
+
 }
 </style>
